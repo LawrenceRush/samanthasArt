@@ -23,10 +23,12 @@
 }
 
 .carousel__track{
+    position: relative;
     height: 100vh;
     list-style: none;
     margin-top: 0;
     padding-left: 0;
+    transition: transform 250ms ease-in;
 }
 
 .carousel__slide{
@@ -56,7 +58,7 @@
    right:20px;
 }
 
-.carousel_nav {
+.carousel__nav {
     width: 100%;
     position: absolute;
     z-index: 1;
