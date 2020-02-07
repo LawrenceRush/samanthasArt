@@ -13,29 +13,24 @@ const setSlidePosition = (slide, index) =>{
 }
 slides.forEach(setSlidePosition)
 
-// const moveToSlide = (track, currentSlide, targetSlide) => {
-//     track.style.transfrom =  "translateX(-" + targetSlide.style.left + ")"
-//     currentSlide.classList.remove("current-slide")
-//     nextSlide.classList.add("current-slide")
-// }   
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.css("transform", `translateX(-${targetSlide.css("left")})` );
+    currentSlide.removeClass("current-slide")
+    targetSlide.addClass("current-slide")
+}   
 
 $(document).ready(function() {
     //When i click left, picture slides left
     $(".carousel__button--left").click(function(){
-        
+        const currentSlide = track.find(".current-slide")
+        const prevSlide = currentSlide.prev()
+        moveToSlide(track, currentSlide, prevSlide)
     }); 
     //when i click right, picture slides to the right
     $(".carousel__button--right").click(function(){
         const currentSlide = track.find(".current-slide")
-
         const nextSlide = currentSlide.next()
-        const amountToMove = nextSlide.css("left");
-        console.log(currentSlide, nextSlide, amountToMove)
-
-        track.css("transform", `translateX(-${amountToMove})` );
-        // track.css("translateX", "-"+amountToMove)
-        currentSlide.removeClass("current-slide")
-        nextSlide.addClass("current-slide")
+        moveToSlide(track, currentSlide, nextSlide)
      }); 
 });
 

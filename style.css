@@ -19,7 +19,7 @@
 
 .carousel__track-container{
     background: lightgreen;
-    height: 100vh
+    height: 100vh;
 }
 
 .carousel__track{
@@ -28,7 +28,7 @@
     list-style: none;
     margin-top: 0;
     padding-left: 0;
-    transition: transform 250ms ease-in;
+    transition: transform 500ms ease;
 }
 
 .carousel__slide{
