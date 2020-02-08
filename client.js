@@ -8,7 +8,6 @@ const slideWidth = slides[0].offsetWidth
 
 //Arrange slides in a line
 const setSlidePosition = (slide, index) =>{
-    console.log(slideWidth)
     slide.style.left = slideWidth * index + "px"
 }
 slides.forEach(setSlidePosition)
@@ -32,7 +31,20 @@ $(document).ready(function() {
         const nextSlide = currentSlide.next()
         moveToSlide(track, currentSlide, nextSlide)
      }); 
+     //when i click nav indicator, carousel slides to that picture
+     $(".carousel__nav").click(function(e) {
+         
+        if ( $( e.target ).is( ":button" ) ) {
+            const targetDot = e.target
+            const currentSlide = track.find(".current-slide")
+            const currentDot = dotsNav.find(".current-slide")
+            const targetIndex = dots.findIndex(dot => dot === targetDot)
+            const targetSlide = slides[targetIndex]
+            console.log(targetSlide)
+            const jqTargetSlide = $(targetSlide)
+            moveToSlide(track, currentSlide, jqTargetSlide)
+          }
+     })
 });
 
 
-//when i click nav indicator, carousel slides to that picture
