@@ -79,5 +79,9 @@
 
 .carousel__indicator.current-slide {
     background-color: rgb(0, 0, 0, .75);
-
 } 
+
+.is-hidden {
+    display: none
+}
+
