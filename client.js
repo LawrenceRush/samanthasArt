@@ -6,15 +6,13 @@ const dotsNav = $(".carousel__nav")
 const dots = Array.from(dotsNav.children())
 const slideWidth = slides[0].offsetWidth
 
-//Arrange slides in a line
-const setSlidePosition = (slide, index) =>{
-    slide.style.left = slideWidth * index + "px"
-}
-slides.forEach(setSlidePosition)
+
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
-    track.css("transform", `translateX(-${targetSlide.css("left")})` );
+   // track.css("transform", `translateX(-${targetSlide.css("left")})` );
     currentSlide.removeClass("current-slide")
+    currentSlide.addClass("prev-slide")
+    targetSlide.removeClass("prev-slide")
     targetSlide.addClass("current-slide")
 }   
 
@@ -38,7 +36,7 @@ const hideShowArrows = (slides, prevButton, nextButton, targetIndex) =>{
 }
 
 $(document).ready(function() {
-    //When i click left, picture slides left
+    //When i click left, previous picture is shown
     $(".carousel__button--left").click(function(){
         const currentSlide = track.find(".current-slide")
         const prevSlide = currentSlide.prev()
@@ -49,7 +47,7 @@ $(document).ready(function() {
         const prevIndex = slides.findIndex(slide => slide === prevSlide[0])
         hideShowArrows(slides, prevButton, nextButton, prevIndex)
     }); 
-    //when i click right, picture slides to the right
+    //when i click right, next picture is shown
     $(".carousel__button--right").click(function(){
         const currentSlide = track.find(".current-slide")
         const nextSlide = currentSlide.next()
@@ -60,7 +58,7 @@ $(document).ready(function() {
         const nextIndex = slides.findIndex(slide => slide === nextSlide[0])
         hideShowArrows(slides, prevButton, nextButton, nextIndex)
      }); 
-     //when i click nav indicator, carousel slides to that picture
+     //when i click nav indicator, carousel get opacity
      $(".carousel__nav").click(function(e) {
          
         if ( $( e.target ).is( ":button" ) ) {

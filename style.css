@@ -34,8 +34,27 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width:100%
+    width:100%;
+    display: none;
 }
+
+.carousel__slide.current-slide{
+    display: block;
+    -webkit-animation: fadeInFromNone 0.9s ease;
+    -moz-animation: fadeInFromNone 0.9s ease;
+    -o-animation: fadeInFromNone 0.9s ease;
+    animation: fadeInFromNone 0.9s ease;
+}
+
+.carousel__slide.prev-slide{
+    display: none;
+    -webkit-animation: fadeOut 0.9s ease;
+    -moz-animation: fadeOut 0.9s ease;
+    -o-animation: fadeOut 0.9s ease;
+    animation: fadeOut 0.9s ease;
+}
+
+
 
 .carousel__button {
     position: absolute;
@@ -85,3 +104,140 @@
     display: none
 }
 
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+@-webkit-keyframes fadeOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    1% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeOut {
+    0% {
+       display: block;
+        opacity: 1;
+    }
+
+    1% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@-o-keyframes fadeOut {
+    0% {
+       display: block;
+        opacity: 1;
+    }
+
+    1% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+       display: block;
+        opacity: 1;
+    }
+
+    1% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
