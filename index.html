@@ -9,13 +9,33 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    
 </head>
 
     
 <body>
-    
+    <header class = "header"> 
+        <h1 class = "header__h1">Samantha Minear</h1>
+        <input type="checkbox" class = "nav-toggle" id = "nav-toggle">
+        <nav class = "header__nav">
+            <ul>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Paintings</a></li>
+                <li><a href="#">Pastels</a></li>
+                <li><a href="#">Sketches</a></li>
+                <li><a href="#">About</a></li>
+
+            </ul>
+        </nav>
+        <label for="nav-toggle" class = "nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
     <div class="carousel">
+        
         <button class="carousel__button carousel__button--left is-hidden">
             <i class="fas fa-chevron-left"></i>
         </button>
@@ -23,7 +43,7 @@
             <ul class = "carousel__track">
                 <li class = "carousel__slide current-slide">
                     <img class = "carousel__image" src="carouselmgs/dollHead.jpg" alt="">
-                </li> -->
+                </li> 
                 <li class = "carousel__slide">
                     <img class = "carousel__image" src="carouselmgs/roseHouse.jpg" alt="">
                 </li>
