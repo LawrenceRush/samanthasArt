@@ -21,43 +21,44 @@ const updateDots = (currentDot, targetDot) => {
     targetDot.addClass("current-slide")
 }
 
-const hideShowArrows = (slides, prevButton, nextButton, targetIndex) =>{
-    console.log("index", targetIndex)
-    if(targetIndex == 0){
-        prevButton.addClass("is-hidden")
-        nextButton.removeClass("is-hidden")
-    } else if (targetIndex === slides.length -1){
-        nextButton.addClass("is-hidden")
-        prevButton.removeClass("is-hidden")
-    } else {
-        nextButton.removeClass("is-hidden")
-        prevButton.removeClass("is-hidden")
-    }
-}
 
 $(document).ready(function() {
     //When i click left, previous picture is shown
     $(".carousel__button--left").click(function(){
         const currentSlide = track.find(".current-slide")
-        const prevSlide = currentSlide.prev()
-        moveToSlide(track, currentSlide, prevSlide)
-        const currentDot = dotsNav.find(".current-slide")
-        const prevDot = currentDot.prev()
-        updateDots(currentDot, prevDot)
-        const prevIndex = slides.findIndex(slide => slide === prevSlide[0])
-        hideShowArrows(slides, prevButton, nextButton, prevIndex)
+        const currentIndex = slides.findIndex(slide => slide === currentSlide[0])
+        if(currentIndex == 0){
+            const nextSlide = currentSlide.siblings("li").last()
+            moveToSlide(track, currentSlide, nextSlide)
+            const currentDot = dotsNav.find(".current-slide")
+            const nextDot = currentDot.siblings("button").last()
+            updateDots(currentDot, nextDot)
+        } else {
+            const prevSlide = currentSlide.prev()
+            moveToSlide(track, currentSlide, prevSlide)
+            const currentDot = dotsNav.find(".current-slide")
+            const prevDot = currentDot.prev()
+            updateDots(currentDot, prevDot)
+        }
     }); 
     //when i click right, next picture is shown
     $(".carousel__button--right").click(function(){
         const currentSlide = track.find(".current-slide")
-        const nextSlide = currentSlide.next()
-        moveToSlide(track, currentSlide, nextSlide)
-        const currentDot = dotsNav.find(".current-slide")
-        const nextDot = currentDot.next()
-        updateDots(currentDot, nextDot)
-        const nextIndex = slides.findIndex(slide => slide === nextSlide[0])
-        hideShowArrows(slides, prevButton, nextButton, nextIndex)
-     }); 
+        const currentIndex = slides.findIndex(slide => slide === currentSlide[0])
+        if(currentIndex == slides.length-1){
+            const nextSlide = currentSlide.siblings("li").first()
+            moveToSlide(track, currentSlide, nextSlide)
+            const currentDot = dotsNav.find(".current-slide")
+            const nextDot = currentDot.siblings("button").first()
+            updateDots(currentDot, nextDot)
+        } else{
+            const nextSlide = currentSlide.next()
+            moveToSlide(track, currentSlide, nextSlide)
+            const currentDot = dotsNav.find(".current-slide")
+            const nextDot = currentDot.next()
+            updateDots(currentDot, nextDot)
+        }
+    }); 
      //when i click nav indicator, carousel get opacity
      $(".carousel__nav").click(function(e) {
          
@@ -72,7 +73,6 @@ $(document).ready(function() {
            
             const jqTargetDot = $(targetDot)
             updateDots(currentDot, jqTargetDot)
-            hideShowArrows(slides, prevButton, nextButton, targetIndex)
 
           }
      })
