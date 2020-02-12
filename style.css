@@ -155,9 +155,27 @@
     animation: fadeOut 0.9s ease;
 }
 
+.button__housing{
+    position: fixed;
+    width:50%;
+    height: 100%;
+    z-index: 999;
+}
+.button__housing.button__housing--right{
+    top:0;
+    right:0;
+}
 
+.button__housing.button__housing.button__housing--right:hover .carousel__button{
+    display: block;
+}
+
+.button__housing.button__housing.button__housing--left:hover .carousel__button{
+    display: block;
+}
 
 .carousel__button {
+    
     position: absolute;
     z-index: 1;
     background-color:white;
@@ -418,4 +436,15 @@
         font-size: 25px;
     }
     
+    .button__housing.button__housing.button__housing--right:hover .carousel__button{
+        display: block;
+    }
+    
+    .button__housing.button__housing.button__housing--left:hover .carousel__button{
+        display: block;
+    }
+    .carousel__button{
+        display: none;
+    }
+
 }
