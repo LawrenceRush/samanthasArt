@@ -5,9 +5,10 @@
 /* navigation styles start here */
 .header{
     position: fixed;
-    z-index: 2;
+    z-index: 1000;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
+    
 }
 .header__h1{
     font-size: 32px;
@@ -198,7 +199,7 @@
 .carousel__nav {
     width: 100%;
     position: absolute;
-    z-index: 1;
+    z-index: 1000;
     top: 90%;
     display: flex;
     justify-content: center;
