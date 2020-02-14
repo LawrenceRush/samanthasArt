@@ -171,7 +171,7 @@ const changeColorsByLuma = (luma) => {
         socialMedia.css({ "color": "black" })
         button.css({"background-color":"black"})
         buttonIcon.css({ "color": "white" })
-        navToggle.css({"background-color":"black"})
+        //navToggle.css({"background-color":"black"})
         setTimeout(()=>{
             let currentDot = dotsNav.find(".current-slide")
             dotsNav.children().css({ "background-color": "rgb(0, 0, 0, .3)" })
@@ -186,7 +186,7 @@ const changeColorsByLuma = (luma) => {
         socialMedia.css({ "color": "white" })
         button.css({"background-color":"white"})
         buttonIcon.css({ "color": "rgb(56,56,56)" })
-        navToggle.css({"background-color":"white"})
+        //navToggle.css({"background-color":"white"})
         setTimeout(()=>{
             let currentDot = dotsNav.find(".current-slide")
            dotsNav.children().css({ "background-color": "rgb(255, 255, 255, .5)" })
