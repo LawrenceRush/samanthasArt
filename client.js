@@ -158,14 +158,20 @@ const determineLuma = (rgb) => {
 
 const changeColorsByLuma = (luma) => {
     let header = $(".header")
-    let headerA = header.find("a")
+    let headerA = header.find("li").find("a")
     let socialMedia = $(".socialMedia")
     let currentDot = dotsNav.find(".current-slide")
-    console.log(header, headerA, socialMedia)
+    let button = $(".carousel__button")
+    let buttonIcon = $(".button__icon")
+    let navToggle = $(".nav-toggle-label").find("span")
+    let documentWidth = $(document).width()
     if (luma >= .5) {
         header.css({ "color": "black" })
         headerA.css({ "color": "black" })
         socialMedia.css({ "color": "black" })
+        button.css({"background-color":"black"})
+        buttonIcon.css({ "color": "white" })
+        navToggle.css({"background-color":"black"})
         setTimeout(()=>{
             let currentDot = dotsNav.find(".current-slide")
             dotsNav.children().css({ "background-color": "rgb(0, 0, 0, .3)" })
@@ -174,12 +180,17 @@ const changeColorsByLuma = (luma) => {
         
     } else {
         header.css({ "color": "white" })
-        headerA.css({ "color": "white" })
+        if (documentWidth > 1195) {
+            headerA.css({ "color": "white" })
+        }
         socialMedia.css({ "color": "white" })
+        button.css({"background-color":"white"})
+        buttonIcon.css({ "color": "rgb(56,56,56)" })
+        navToggle.css({"background-color":"white"})
         setTimeout(()=>{
             let currentDot = dotsNav.find(".current-slide")
-            dotsNav.children().css({ "background-color": "rgb(255, 255, 255, .5)" })
-            currentDot.css({ "background-color": "rgb(255, 255, 255, .85)" })
+           dotsNav.children().css({ "background-color": "rgb(255, 255, 255, .5)" })
+           currentDot.css({ "background-color": "rgb(255, 255, 255, .85)" })
         }, 10)
         
 
