@@ -2,6 +2,11 @@
     margin:0;
     padding:0;
 }
+
+:root{
+    --luma: 0.6;
+    --threshold: 0.5;
+}
 /* navigation styles start here */
 .header{
     position: fixed;
@@ -88,8 +93,9 @@
 .nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
+   
     display:block;
-    background:black;
+    background-color:hsl(0, 0%, calc((var(--luma) - var(--threshold)) * -10000000%));
     height: 2px;
     width: 1.5em;
     border-radius: 2px;
@@ -191,15 +197,15 @@
 }
 
 .button__housing.button__housing.button__housing--right:hover .carousel__button{
-    display: block;
+    display: none;
 }
 
 .button__housing.button__housing.button__housing--left:hover .carousel__button{
-    display: block;
+    display: none;
 }
 
 .carousel__button {
-    
+    display:none;
     position: absolute;
     z-index: 1;
     background-color:black;

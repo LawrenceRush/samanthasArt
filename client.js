@@ -51,7 +51,7 @@ let restart
 
 $(document).ready(function () {
     //When i click left, previous picture is shown
-    $(".carousel__button--left").click(function () {
+    $(".button__housing--left").click(function () {
         clearInterval(autoCycle)
         clearTimeout(restart)
         const currentSlide = track.find(".current-slide")
@@ -72,7 +72,7 @@ $(document).ready(function () {
         restart = setTimeout(function () { autoCycle = setInterval(manualClick, 5000) }, 5000)
     });
     //when i click right, next picture is shown
-    $(".carousel__button--right").click(function () {
+    $(".button__housing--right").click(function () {
         clearInterval(autoCycle)
         clearTimeout(restart)
         advanceRight()
@@ -96,6 +96,16 @@ $(document).ready(function () {
             restart = setTimeout(function () { autoCycle = setInterval(manualClick, 5000) }, 5000)
         }
     })
+        $('.nav-toggle').click(function(){
+            if($(this).prop("checked") == true){
+                $(":root").css("--luma", ".6");
+            }
+            else if($(this).prop("checked") == false){
+                const currentSlide = track.find(".current-slide")
+                currentSlideImg = currentSlide.children()[0]
+                changeFontColors(currentSlideImg)
+            }
+        });
 });
 
 
@@ -157,6 +167,10 @@ const determineLuma = (rgb) => {
 }
 
 const changeColorsByLuma = (luma) => {
+    let nav = $(".header__nav")
+    if($(".nav-toggle").is(":not(:checked)")){
+        $(":root").css("--luma", luma);
+    }
     let header = $(".header")
     let headerA = header.find("li").find("a")
     let socialMedia = $(".socialMedia")
