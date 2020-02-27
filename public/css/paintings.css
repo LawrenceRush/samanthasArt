@@ -130,22 +130,33 @@
 .paintings__con{
     padding-top:40px;
     display: grid;
-    grid-template-columns: auto;
-    grid-row-gap: 10px;
+    grid-template-columns: 100vw 0px 0px 0px;
+   
+   
+}
+
+.painting__column{
+    display: grid;
+    grid-template-columns: 100vw;
+    justify-items:center;
+    grid-row-gap:10px
 }
 .paintings__con img{
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     width: auto\9; /* ie8 */
 }
-.paintings__con--desktop{
-    display: none;
-}
+
 .socialMedia{
     display: none;
 }
 
-@media screen and (min-width:1195px){
+.isHidden{
+    display: none;
+}
+
+
+@media screen and (min-width:650px){
     .nav-toggle-label{
         display: none;
     }
@@ -218,33 +229,26 @@
     }
     /*Art section*/
     .paintings__con{
-        display:none
-       /* all:unset;
+        
+        all:unset;
        padding-top: 200px;
        display: grid;
-       grid-template-columns: 300px 300px 300px 300px;
-       grid-template-rows: auto auto auto;
-       grid-gap: 10px 20px; */
+       grid-template-columns: 300px 300px;
+       grid-gap: 10px 20px;
+       justify-content: center;	
+
+    }
+
+    .painting__column{
+        all: unset;
+        display: grid;
+        grid-template-columns: 300px;
+        grid-auto-rows: min-content;
+        grid-row-gap: 10px;
+        justify-items: center;
     }
    
-    .paintings__con--desktop{
-        all:unset;
-       padding-top: 180px;
-       display: grid;
-       grid-template-columns: 300px 300px 300px 300px 300px;
-       grid-template-rows: auto auto auto;
-       grid-gap: 20px 30px;
-       width: 90%;
-       margin: 0 auto;
-       justify-content: center;	
-    }
-    .paintings__con--desktop img{
-        all:unset;
-        max-width: 300px;
-        height: auto;
-        margin-bottom: 10px;
-       
-    }
+    
     /* social media starts here */
     .socialMedia {
         display: flex;
@@ -271,3 +275,16 @@
    
 
 }
+
+@media screen and (min-width:1100px){
+    .paintings__con{
+        grid-template-columns: 300px 300px 300px;
+    }
+}
+@media screen and (min-width:1600px){
+    .paintings__con{
+        grid-template-columns: 300px 300px 300px 300px;
+    }
+}
+
+
