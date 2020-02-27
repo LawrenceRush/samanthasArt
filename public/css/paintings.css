@@ -285,6 +285,10 @@
     .paintings__con{
         grid-template-columns: 300px 300px 300px 300px;
     }
+@media screen and (min-width:1700px){
+        .paintings__con{
+            grid-template-columns: 300px 300px 300px 300px 300px;
+        }
 }
 
 
