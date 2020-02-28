@@ -155,7 +155,14 @@
     display: none;
 }
 
+img{
+    position: relative;
+    transition: .6s ease-out;
+}
 
+img:hover{
+    transform:translateY(5px)
+}
 @media screen and (min-width:650px){
     .nav-toggle-label{
         display: none;
@@ -244,7 +251,7 @@
         display: grid;
         grid-template-columns: 300px;
         grid-auto-rows: min-content;
-        grid-row-gap: 10px;
+        grid-row-gap: 15px;
         justify-items: center;
     }
    
