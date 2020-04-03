@@ -10,7 +10,9 @@ const paintings = Array.from(col1.children())
 
 
 const resize = () => {
+    console.log($(window).width())
     if ($(window).width() >= 1700) {
+        console.log("1700")
         for (var x = 0; x < paintings.length; x++) {
             let index = x + 1
             let cycleNum = (index / 5)
@@ -37,8 +39,8 @@ const resize = () => {
             }
         }
     }
-    else if ($(window).width() >= 1600) {
-
+    else if ($(window).width() >= 1500) {
+        console.log("1500")
         for (var x = 0; x < paintings.length; x++) {
             let index = x + 1
             let cycleNum = (index / 4)
@@ -78,7 +80,6 @@ const resize = () => {
     else if ($(window).width() >= 1100) {
         for (var i = paintings.length - 1; i > 0; i--) {
             if (i % 3 == 0) {
-                console.log(i)
                 paintings[i].remove()
                 col3.append(paintings[i])
             } else if (i % 2 == 0) {
@@ -100,5 +101,5 @@ const resize = () => {
     }
 }
 //when window resizes, fun the function
-// window.addEventListener("resize", resize);
+ window.addEventListener("resize", resize);
 resize()
