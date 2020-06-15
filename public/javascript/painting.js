@@ -102,4 +102,15 @@ const resize = () => {
 }
 //when window resizes, fun the function
  window.addEventListener("resize", resize);
-resize()
+resize();
+
+//when painting is clicked, show the modal
+const $modal = $('#modal');
+$('.overlay__con').on('click',function(){
+    let imgSrc =($(this).siblings()[0].src);
+
+    var img = $(`<img id="dynamic" src = ${imgSrc}>`);
+    $modal.prepend(img);
+    $modal.css("display", "block");
+    console.log("working");
+});  
