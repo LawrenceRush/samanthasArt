@@ -3,17 +3,7 @@
     --luma: 0.6;
     --threshold: 0.5;
 }
-/*modal css*/
-#modal{
-    border: 10px solid red;
-    
-    position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  display: none;
-}
+
 /* navigation styles start here */
 .header{
     position: fixed;
@@ -212,6 +202,27 @@
 
 .img__div:hover .overlay__con{
     opacity: 1;
+}
+
+/* modal styling */
+.modal__align-center{
+    text-align: center; 
+}
+
+.modal__div-style{
+    background-color: lightgrey;
+    height: 25px;
+}
+
+/*modal css*/
+#modal{
+    border: 10px solid red;
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  display: none;
 }
 @media screen and (min-width:650px){
     .nav-toggle-label{

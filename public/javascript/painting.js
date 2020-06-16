@@ -109,8 +109,10 @@ const $modal = $('#modal');
 $('.overlay__con').on('click',function(){
     let imgSrc =($(this).siblings()[0].src);
 
-    var img = $(`<img id="dynamic" src = ${imgSrc}>`);
-    $modal.prepend(img);
+    var img = $(` <img id="dynamic" style="max-height: 60vh" src = ${imgSrc}>
+    <div class = "modal__div-style">
+    `);
+    $modal.append(img);
     $modal.css("display", "block");
     console.log("working");
 });  
