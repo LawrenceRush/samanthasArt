@@ -114,5 +114,41 @@ $('.overlay__con').on('click',function(){
     `);
     $modal.append(img);
     $modal.css("display", "block");
-    console.log("working");
+    $modal.addClass("fadeInAnimation")
+    
+//Apply blur to the header and painting secion
+    let header = $('.header');
+    let paintingCon = $('.paintings__con');
+    header.css("filter", " blur(8px)");
+    header.css("-webkit-filter", " blur(8px)");
+    paintingCon.css("filter", " blur(8px)");
+    paintingCon.css("-webkit-filter", " blur(8px)");
+//Disbale scroll and interaction
+    let body = $('body');
+    body.css("overflow", "hidden");
+    header.css('pointer-events', 'none');
+    paintingCon.css('pointer-events', 'none')
 });  
+
+//when modal x is clicked, rollback all changes made
+$('.fa-times').on('click',function(){
+    console.log('click')
+    //remove current painting
+    $modal.css("display", "none");
+    $modal.children()[1].remove();
+    $modal.children()[1].remove();
+    console.log($modal.children());
+    let header = $('.header');
+    let paintingCon = $('.paintings__con');
+    //remove blur
+    header.css("filter", " none");
+    header.css("-webkit-filter", " none");
+    paintingCon.css("filter", " none");
+    paintingCon.css("-webkit-filter", " none");
+    //make page interactable again
+    let body = $('body');
+    body.css("overflow", "visible");
+    header.css('pointer-events', 'auto');
+    paintingCon.css('pointer-events', 'auto')
+
+});
