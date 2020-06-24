@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-app.set('port', (process.env.PORT || 3000));
+const port = process.env.Port||3000
 app.use(express.static('public'))
 
 app.get('/paintings', (req, res) => {
@@ -12,4 +12,4 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(app.get('port'), () => console.log(`Example app listening on port http://localhost:${port} !`))
+app.listen(port, () => console.log(`Example app listening on port http://localhost:${port} !`))
