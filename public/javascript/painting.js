@@ -78,10 +78,11 @@ const resize = () => {
 
     // } 
     else if ($(window).width() >= 1100) {
-        for (var i = paintings.length - 1; i > 0; i--) {
+        for (var i = paintings.length - 1; i >= 0; i--) {
             if (i % 3 == 0) {
                 paintings[i].remove()
                 col3.append(paintings[i])
+                
             } else if (i % 2 == 0) {
                 paintings[i].remove()
                 col2.append(paintings[i])
@@ -91,7 +92,7 @@ const resize = () => {
     } else if ($(window).width() >= 650) {
         col2.removeClass("isHidden")
         // do your stuff
-        for (var i = paintings.length - 1; i > 0; i--) {
+        for (var i = paintings.length - 1; i >= 0; i--) {
             if (i % 2 == 0) {
                 paintings[i].remove()
                 col2.append(paintings[i])
@@ -109,7 +110,7 @@ const $modal = $('#modal');
 $('.overlay__con').on('click',function(){
     let imgSrc =($(this).siblings()[0].src);
 
-    var img = $(` <img id="dynamic" style="max-height: 60vh" src = ${imgSrc}>
+    var img = $(` <img id="dynamic"  src = ${imgSrc}>
     <div class = "modal__div-style">
     `);
     $modal.append(img);
