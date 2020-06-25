@@ -132,7 +132,7 @@
 }
 /* Art section */
 .paintings__con{
-    padding-top:40px;
+    padding-top:100px;
     display: grid;
     grid-template-columns: 100vw 0px 0px 0px;
    
@@ -152,7 +152,7 @@
     width: auto\9; /* ie8 */
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
     
 }
 
@@ -173,8 +173,7 @@
     position: relative;
     transition: .6s ease-out;
     width: 100%;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-
+    
 }
 .overlay__con{
     position:absolute;
@@ -211,12 +210,20 @@
 
 .modal__div-style{
     background-color: lightgrey;
-    height: 25px;
+    height: 35px;
 }
-
+.button {
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 /*modal css*/
 #modal{
-    border: 10px solid red;
     position: fixed;
   top: 50%;
   left: 50%;
@@ -224,6 +231,11 @@
   transform: translate(-50%, -50%);
   display: none;
   
+}
+
+#dynamic {
+    max-height: 60vh;
+    max-width: 90vw;
 }
 /*animation for modal */
 .fadeInAnimation{
@@ -235,6 +247,7 @@
 
 
 @media screen and (min-width:650px){
+
     .nav-toggle-label{
         display: none;
     }
@@ -326,7 +339,11 @@
         justify-items: center;
     }
    
+    .img__div{
+        
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     
+    }
     /* social media starts here */
     .socialMedia {
         display: flex;
