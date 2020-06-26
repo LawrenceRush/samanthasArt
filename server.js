@@ -6,6 +6,10 @@ app.get('/paintings', (req, res) => {
     res.sendFile('public/html/paintings.html' , { root : __dirname});
 });
 
+app.get('/pastels', (req, res) => {
+    res.sendFile('public/html/pastels.html' , { root : __dirname});
+});
+
 app.get('/', (req, res) => {
     res.sendFile('public/html/index.html' , { root : __dirname});
 });
