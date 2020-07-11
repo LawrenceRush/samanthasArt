@@ -132,7 +132,7 @@ $('.overlay__con').on('click',function(){
 });  
 
 //when modal x is clicked, rollback all changes made
-$('.fa-times').on('click',function(){
+$('.button').on('click',function(){
     console.log('click')
     //remove current painting
     $modal.css("display", "none");

@@ -10,6 +10,14 @@ app.get('/pastels', (req, res) => {
     res.sendFile('public/html/pastels.html' , { root : __dirname});
 });
 
+app.get('/work', (req, res) => {
+    res.sendFile('public/html/work.html' , { root : __dirname});
+});
+
+app.get('/drawings', (req, res) => {
+    res.sendFile('public/html/drawings.html' , { root : __dirname});
+});
+
 app.get('/', (req, res) => {
     res.sendFile('public/html/index.html' , { root : __dirname});
 });
