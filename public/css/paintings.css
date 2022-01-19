@@ -244,8 +244,16 @@
   animation-timing-function: ease-in-out;
 -webkit-animation-timing-function: ease-in-out;
 }
+.about-me-sec{
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-top: 150px;
+}
 
-
+.artist-image{
+    float: left;
+    margin-right: 3rem;
+}
 @media screen and (min-width:650px){
 
     .nav-toggle-label{
