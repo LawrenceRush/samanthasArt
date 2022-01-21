@@ -21,7 +21,7 @@
 .header__h1 a{
     color: inherit;
     text-decoration:none;
-    font-family: 'Homemade Apple', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
 
 }
@@ -213,7 +213,7 @@
     height: 35px;
 }
 .button {
-    background-color: red; /* Green */
+    background-color: Gray; /* Green */
     border: none;
     color: white;
     padding: 7px 15px;
@@ -353,7 +353,7 @@
    
     .img__div{
         
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        /*box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);/*
     
     }
     /* social media starts here */
