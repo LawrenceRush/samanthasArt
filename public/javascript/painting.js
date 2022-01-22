@@ -82,7 +82,7 @@ const resize = () => {
             if (i % 3 == 0) {
                 paintings[i].remove()
                 col3.append(paintings[i])
-                
+
             } else if (i % 2 == 0) {
                 paintings[i].remove()
                 col2.append(paintings[i])
@@ -102,37 +102,43 @@ const resize = () => {
     }
 }
 //when window resizes, fun the function
- window.addEventListener("resize", resize);
+window.addEventListener("resize", resize);
 resize();
 
 //when painting is clicked, show the modal
 const $modal = $('#modal');
-$('.overlay__con').on('click',function(){
-    let imgSrc =($(this).siblings()[0].src);
-
-    var img = $(` <img id="dynamic"  src = ${imgSrc}>
-    <div class = "modal__div-style">
-    `);
+$('.overlay__con').on('click', function () {
+    let imgSrc = ($(this).siblings()[0].src);
+    let width = $(this).siblings()[0].width;
+    let height = $(this).siblings()[0].height;
+    let img;
+    if (width > height){
+        img = $(` <img id="dynamic-width-large"  src = ${imgSrc}>
+        <div class = "modal__div-style">`);
+    } else {
+        img = $(` <img id="dynamic-height-large"  src = ${imgSrc}>
+        <div class = "modal__div-style">`);
+    }   
     $modal.append(img);
     $modal.css("display", "block");
     $modal.addClass("fadeInAnimation")
-    
-//Apply blur to the header and painting secion
+
+    //Apply blur to the header and painting secion
     let header = $('.header');
     let paintingCon = $('.paintings__con');
     header.css("filter", " blur(8px)");
     header.css("-webkit-filter", " blur(8px)");
     paintingCon.css("filter", " blur(8px)");
     paintingCon.css("-webkit-filter", " blur(8px)");
-//Disbale scroll and interaction
+    //Disbale scroll and interaction
     let body = $('body');
     body.css("overflow", "hidden");
     header.css('pointer-events', 'none');
     paintingCon.css('pointer-events', 'none')
-});  
+});
 
 //when modal x is clicked, rollback all changes made
-$('.button').on('click',function(){
+$('.button').on('click', function () {
     console.log('click')
     //remove current painting
     $modal.css("display", "none");

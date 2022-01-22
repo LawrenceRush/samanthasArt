@@ -230,12 +230,22 @@
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
   display: none;
+  z-index: 1001;
   
 }
 
-#dynamic {
-    max-height: 60vh;
-    max-width: 90vw;
+#dynamic-width-large {
+    min-height:65vh;
+    min-width: auto;
+    max-height: 65vh;
+    /*max-width: 90vw;*/
+}
+
+#dynamic-height-large {
+    min-height:85vh;
+    min-width: auto;
+    max-height: 85vh;
+    /*max-width: 90vw;*/
 }
 /*animation for modal */
 .fadeInAnimation{
@@ -351,11 +361,11 @@
         justify-items: center;
     }
    
-    .img__div{
+    .img__div{}
         
         /*box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);/*
     
-    }
+    
     /* social media starts here */
     .socialMedia {
         display: flex;
