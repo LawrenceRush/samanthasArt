@@ -7,8 +7,6 @@ const col4 = $(columns[3])
 const col5 = $(columns[4])
 const paintings = Array.from(col1.children())
 
-
-
 const resize = () => {
     console.log($(window).width())
     if ($(window).width() >= 1700) {
@@ -63,20 +61,7 @@ const resize = () => {
             }
         }
     }
-    // for (var i = paintings.length - 1; i > 0; i--) {
-    //     if ((i+1) % 4 ==0){
-    //         paintings[i].remove()
-    //         col4.append(paintings[i])
-    //     }else if ((i+1) % 3 == 0) {
-    //         console.log(i)
-    //         paintings[i].remove()
-    //         col3.append(paintings[i])
-    //     } else if ((i+1) % 2 == 0) {
-    //         paintings[i].remove()
-    //         col2.append(paintings[i])
-    //     } 
-
-    // } 
+    
     else if ($(window).width() >= 1100) {
         for (var i = paintings.length - 1; i >= 0; i--) {
             if (i % 3 == 0) {
@@ -157,5 +142,4 @@ $('.button').on('click', function () {
     body.css("overflow", "visible");
     header.css('pointer-events', 'auto');
     paintingCon.css('pointer-events', 'auto')
-
 });

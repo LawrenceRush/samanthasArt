@@ -6,8 +6,6 @@ const dotsNav = $(".carousel__nav")
 const dots = Array.from(dotsNav.children())
 const slideWidth = slides[0].offsetWidth
 
-
-
 const moveToSlide = (track, currentSlide, targetSlide) => {
     // track.css("transform", `translateX(-${targetSlide.css("left")})` );
     currentSlide.removeClass("current-slide")
@@ -15,8 +13,7 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
     targetSlide.removeClass("prev-slide")
     targetSlide.addClass("current-slide")
     targetSlideImg = targetSlide.children()[0]
-    changeFontColors(targetSlideImg)
-    
+    changeFontColors(targetSlideImg)   
 }
 
 const updateDots = (currentDot, targetDot) => {
