@@ -92,10 +92,55 @@ resize();
 
 //when painting is clicked, show the modal
 const $modal = $('#modal');
-$('.overlay__con').on('click', function () {
-    let imgSrc = ($(this).siblings()[0].src);
-    let width = $(this).siblings()[0].width;
-    let height = $(this).siblings()[0].height;
+$('.overlay__con').on('click', function(){
+    if ($(window).width() > 1100) {
+        showModal($(this));
+    }
+    
+});
+
+//when modal x is clicked, rollback all changes made
+$('.button').on('click', function () {
+    console.log('click')
+    //remove current painting
+    $modal.css("display", "none");
+    $modal.children()[1].remove();
+    $modal.children()[1].remove();
+    console.log($modal.children());
+    let header = $('.header');
+    let paintingCon = $('.paintings__con');
+    //remove blur
+    header.css("filter", " none");
+    header.css("-webkit-filter", " none");
+    paintingCon.css("filter", " none");
+    paintingCon.css("-webkit-filter", " none");
+    //make page interactable again
+    let body = $('body');
+    body.css("overflow", "visible");
+    header.css('pointer-events', 'auto');
+    paintingCon.css('pointer-events', 'auto')
+});
+
+//for Mobile make the overlay pop up on click
+$('.img__div').on('click', function () {
+    if ($(window).width() < 1100) {
+        console.log($(this).children());
+        let overlay = ($($(this).children()[1]));
+        console.log(overlay);
+        if(overlay.hasClass('makeVisible')){
+            showModal(overlay);
+            overlay.removeClass('makeVisible');
+        } else{
+            overlay.addClass('makeVisible');
+        }
+    }
+})
+
+
+function showModal(thisObj) {
+    let imgSrc = (thisObj.siblings()[0].src);
+    let width = thisObj.siblings()[0].width;
+    let height = thisObj.siblings()[0].height;
     let img;
     if (width > height){
         img = $(` <img id="dynamic-width-large"  src = ${imgSrc}>
@@ -120,26 +165,4 @@ $('.overlay__con').on('click', function () {
     body.css("overflow", "hidden");
     header.css('pointer-events', 'none');
     paintingCon.css('pointer-events', 'none')
-});
-
-//when modal x is clicked, rollback all changes made
-$('.button').on('click', function () {
-    console.log('click')
-    //remove current painting
-    $modal.css("display", "none");
-    $modal.children()[1].remove();
-    $modal.children()[1].remove();
-    console.log($modal.children());
-    let header = $('.header');
-    let paintingCon = $('.paintings__con');
-    //remove blur
-    header.css("filter", " none");
-    header.css("-webkit-filter", " none");
-    paintingCon.css("filter", " none");
-    paintingCon.css("-webkit-filter", " none");
-    //make page interactable again
-    let body = $('body');
-    body.css("overflow", "visible");
-    header.css('pointer-events', 'auto');
-    paintingCon.css('pointer-events', 'auto')
-});
+}
