@@ -15,13 +15,13 @@
     width: 100%;
     }
 .header__h1{
-    font-size: 30px;
+    font-size: 32px;
     /* padding-top: 10px; */
     margin: 10px 0px 10px 15px
    }
 
 .header__h1 a{
-    color: inherit;
+    color: hsl(0, 0%, calc((var(--luma) - var(--threshold)) * -10000000%));
     text-decoration:none
 }
 
